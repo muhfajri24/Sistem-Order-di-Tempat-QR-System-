@@ -65,8 +65,15 @@
             <p>Tekan + atau - untuk mengatur jumlah, lalu cart akan update otomatis.</p>
           </div>
 
+          <div class="menu-filter-bar" aria-label="Filter kategori menu">
+            <button class="menu-filter-btn active" type="button" data-menu-filter="all">All</button>
+            <button class="menu-filter-btn" type="button" data-menu-filter="makanan">Makanan</button>
+            <button class="menu-filter-btn" type="button" data-menu-filter="minuman">Minuman</button>
+            <button class="menu-filter-btn" type="button" data-menu-filter="dessert">Dessert</button>
+          </div>
+
           <div class="menu-grid" data-menu-grid>
-            <article class="menu-card" data-name="Es Kopi Susu Senja" data-price="18000">
+            <article class="menu-card" data-name="Es Kopi Susu Senja" data-price="18000" data-category="minuman">
               <img class="menu-image" src="images/es-kopi-susu.jpg" alt="Es Kopi Susu Senja">
               <div class="menu-body">
                 <span class="menu-badge">Coffee</span>
@@ -83,7 +90,7 @@
               </div>
             </article>
 
-            <article class="menu-card" data-name="Matcha Latte" data-price="22000">
+            <article class="menu-card" data-name="Matcha Latte" data-price="22000" data-category="minuman">
               <img class="menu-image" src="images/matcha-latte.jpg" alt="Matcha Latte">
               <div class="menu-body">
                 <span class="menu-badge">Non Coffee</span>
@@ -100,7 +107,7 @@
               </div>
             </article>
 
-            <article class="menu-card" data-name="Chocolate Cream" data-price="20000">
+            <article class="menu-card" data-name="Chocolate Cream" data-price="20000" data-category="minuman">
               <img class="menu-image" src="images/chocolate.jpg" alt="Chocolate Cream">
               <div class="menu-body">
                 <span class="menu-badge">Non Coffee</span>
@@ -117,7 +124,7 @@
               </div>
             </article>
 
-            <article class="menu-card" data-name="Espresso Tonic" data-price="21000">
+            <article class="menu-card" data-name="Espresso Tonic" data-price="21000" data-category="minuman">
               <img class="menu-image" src="images/espresso-tonic.jpg" alt="Espresso Tonic">
               <div class="menu-body">
                 <span class="menu-badge">Coffee</span>
@@ -134,7 +141,7 @@
               </div>
             </article>
 
-            <article class="menu-card" data-name="Butter Croissant" data-price="16000">
+            <article class="menu-card" data-name="Butter Croissant" data-price="16000" data-category="makanan">
               <img class="menu-image" src="images/croissant.jpg" alt="Butter Croissant">
               <div class="menu-body">
                 <span class="menu-badge">Snack</span>
@@ -151,7 +158,7 @@
               </div>
             </article>
 
-            <article class="menu-card" data-name="Caramel Lava Toast" data-price="23000">
+            <article class="menu-card" data-name="Caramel Lava Toast" data-price="23000" data-category="dessert">
               <img class="menu-image" src="images/toast.jpg" alt="Caramel Lava Toast">
               <div class="menu-body">
                 <span class="menu-badge">Dessert</span>
@@ -168,7 +175,7 @@
               </div>
             </article>
 
-            <article class="menu-card" data-name="Rice Bowl Special" data-price="28000">
+            <article class="menu-card" data-name="Rice Bowl Special" data-price="28000" data-category="makanan">
               <img class="menu-image" src="images/rice-bowl.jpg" alt="Rice Bowl Special">
               <div class="menu-body">
                 <span class="menu-badge">Main Course</span>
@@ -185,7 +192,7 @@
               </div>
             </article>
 
-            <article class="menu-card" data-name="Paket Snack Senja" data-price="35000">
+            <article class="menu-card" data-name="Paket Snack Senja" data-price="35000" data-category="makanan">
               <img class="menu-image" src="images/paket-snack.jpg" alt="Paket Snack Senja">
               <div class="menu-body">
                 <span class="menu-badge">Bundle</span>
@@ -307,3 +314,4 @@
 </html>
 
   
+

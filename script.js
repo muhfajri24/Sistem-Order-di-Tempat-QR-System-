@@ -26,11 +26,13 @@ const paymentModeButtons = document.querySelectorAll("[data-payment-mode]");
 const cashierMethodButtons = document.querySelectorAll("[data-cashier-method]");
 const cashierMethodsBox = document.querySelector("[data-cashier-methods]");
 const paymentHint = document.querySelector("[data-payment-hint]");
+const menuFilterButtons = document.querySelectorAll("[data-menu-filter]");
 
 const cart = new Map();
 let currentTable = "Meja 01";
 let paymentMode = "qris";
 let cashierMethod = "cash";
+let activeMenuFilter = "all";
 
 const formatRupiah = (value) =>
   new Intl.NumberFormat("id-ID", {
@@ -149,6 +151,18 @@ const syncCardFromCart = (name) => {
   }
 };
 
+const renderMenuFilter = () => {
+  menuFilterButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.menuFilter === activeMenuFilter);
+  });
+
+  menuGrid?.querySelectorAll(".menu-card").forEach((card) => {
+    const category = card.dataset.category || "all";
+    const isVisible = activeMenuFilter === "all" || category === activeMenuFilter;
+    card.hidden = !isVisible;
+  });
+};
+
 const renderPaymentSelection = () => {
   paymentModeButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.paymentMode === paymentMode);
@@ -251,6 +265,15 @@ if (cashierMethodButtons.length) {
     button.addEventListener("click", () => {
       cashierMethod = button.dataset.cashierMethod || "cash";
       renderPaymentSelection();
+    });
+  });
+}
+
+if (menuFilterButtons.length) {
+  menuFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeMenuFilter = button.dataset.menuFilter || "all";
+      renderMenuFilter();
     });
   });
 }
@@ -395,5 +418,8 @@ if (confirmPaymentButton) {
 
 syncTableInfo();
 renderPaymentSelection();
+renderMenuFilter();
 renderCart();
+
+
 
