@@ -335,9 +335,16 @@ if (cartItemsContainer) {
 if (openPaymentButton) {
   openPaymentButton.addEventListener("click", () => {
     const { items, totalPrice } = getCartTotals();
+    const customerName = String(new FormData(checkoutForm).get("name") || "").trim();
 
     if (items.length === 0) {
       window.alert("Pilih minimal satu menu sebelum lanjut ke pembayaran.");
+      return;
+    }
+
+    if (!customerName) {
+      window.alert("Nama pemesan wajib diisi agar pesanan sesuai dengan nomor meja.");
+      checkoutForm?.elements.namedItem("name")?.focus();
       return;
     }
 
@@ -370,6 +377,13 @@ if (confirmPaymentButton) {
     }
 
     const customerName = String(new FormData(checkoutForm).get("name") || "").trim();
+
+    if (!customerName) {
+      window.alert("Nama pemesan wajib diisi agar pesanan sesuai dengan nomor meja.");
+      checkoutForm?.elements.namedItem("name")?.focus();
+      return;
+    }
+
     const paymentMethod = getPaymentMethodLabel();
 
     const order = {
@@ -420,6 +434,8 @@ syncTableInfo();
 renderPaymentSelection();
 renderMenuFilter();
 renderCart();
+
+
 
 
 
