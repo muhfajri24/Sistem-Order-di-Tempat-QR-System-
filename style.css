@@ -1425,3 +1425,279 @@ input {
     font-size: 0.94rem;
   }
 }
+
+:root {
+  --bg: #fff4de;
+  --surface: rgba(255, 250, 241, 0.96);
+  --surface-strong: #fff8ee;
+  --text: #38110c;
+  --muted: #7a4a2e;
+  --accent: #c62828;
+  --accent-dark: #8f1414;
+  --accent-soft: #ffd34f;
+  --line: rgba(143, 20, 20, 0.12);
+  --shadow: 0 18px 38px rgba(125, 32, 20, 0.12);
+}
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(255, 211, 79, 0.42), transparent 28%),
+    radial-gradient(circle at top left, rgba(198, 40, 40, 0.12), transparent 30%),
+    linear-gradient(180deg, #fff8ed 0%, #fff0d4 100%);
+}
+
+body::before {
+  background:
+    linear-gradient(rgba(198, 40, 40, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198, 40, 40, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.48;
+}
+
+.app-header,
+.card-surface,
+.menu-card,
+.payment-dialog {
+  background: linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(255, 246, 229, 0.98) 100%);
+  border-color: rgba(198, 40, 40, 0.12);
+}
+
+.app-header {
+  box-shadow: 0 18px 40px rgba(143, 20, 20, 0.1);
+}
+
+.brand-mark {
+  background: linear-gradient(135deg, #d33232, #8f1414);
+  box-shadow: 0 12px 24px rgba(198, 40, 40, 0.28);
+}
+
+.brand-block strong,
+.section-head h2,
+.menu-body h3,
+.payment-dialog h2,
+.status-box h3,
+.admin-redirect h2 {
+  color: #461411;
+}
+
+.eyebrow,
+.table-pill span,
+.form-title {
+  color: #a41c1c;
+}
+
+.admin-link {
+  background: #fffaf1;
+  border-color: rgba(198, 40, 40, 0.14);
+  color: #7f1a16;
+}
+
+.table-pill {
+  background: linear-gradient(135deg, rgba(255, 211, 79, 0.28), rgba(255, 239, 196, 0.94));
+}
+
+.menu-filter-btn.active,
+.payment-choice.active,
+.btn,
+.quickbar-primary {
+  background: linear-gradient(135deg, #cf2f2f, #971616);
+  color: #fff;
+}
+
+.quickbar-link,
+.menu-filter-btn,
+.qty-control,
+.payment-choice,
+.payment-choice-box,
+.cashier-method-box,
+.cashier-info,
+.cart-summary > div,
+.cart-item,
+.empty-state,
+.status-box {
+  border-color: rgba(198, 40, 40, 0.12);
+}
+
+.menu-filter-btn,
+.quickbar-link,
+.qty-control,
+.payment-choice,
+.cart-summary > div,
+.cart-item,
+.empty-state,
+.payment-choice-box,
+.cashier-info,
+.status-box {
+  background: rgba(255, 252, 247, 0.88);
+}
+
+.menu-badge,
+.hero-steps span,
+.cashier-badges span,
+.quickbar-cart strong {
+  background: rgba(255, 211, 79, 0.32);
+  color: #8c2319;
+}
+
+.menu-bottom strong,
+.cart-summary strong,
+.payment-total strong {
+  color: #af1c1c;
+}
+
+.qty-btn,
+.cart-item-actions button,
+.status-action {
+  background: rgba(255, 211, 79, 0.42);
+  color: #8f1414;
+}
+
+.btn-secondary {
+  background: rgba(255, 211, 79, 0.34);
+  color: #8f1414;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+
+  .app-header {
+    background:
+      linear-gradient(90deg, rgba(207, 47, 47, 0.06), rgba(255, 250, 241, 0.98) 22%),
+      linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(255, 244, 222, 0.98) 100%);
+    border-radius: 24px;
+  }
+
+  .brand-block strong {
+    font-size: 0.92rem;
+    font-weight: 800;
+  }
+
+  .brand-block p {
+    color: #7f4c31;
+  }
+
+  .admin-link {
+    background: #fffdf8;
+    box-shadow: inset 0 0 0 1px rgba(198, 40, 40, 0.06);
+  }
+
+  .menu-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .menu-section::before {
+    content: "Menu cepat pilih";
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 12px;
+    margin-bottom: 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffd34f, #ffecad);
+    color: #8a1717;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-head h2 {
+    font-size: 1.34rem;
+    line-height: 1.06;
+  }
+
+  .section-head p {
+    color: #7a513c;
+    line-height: 1.45;
+  }
+
+  .menu-filter-bar {
+    margin-top: 12px;
+    padding-bottom: 2px;
+  }
+
+  .menu-filter-btn {
+    background: #fffaf1;
+    color: #902222;
+    box-shadow: inset 0 0 0 1px rgba(198, 40, 40, 0.08);
+  }
+
+  .menu-grid {
+    gap: 12px;
+  }
+
+  .menu-card {
+    border: 1px solid rgba(198, 40, 40, 0.12);
+    background: linear-gradient(180deg, #fff9ef 0%, #fff2d9 100%);
+    box-shadow: 0 12px 24px rgba(143, 20, 20, 0.08);
+  }
+
+  .menu-image {
+    border-bottom: 3px solid rgba(255, 211, 79, 0.72);
+  }
+
+  .menu-body {
+    gap: 7px;
+  }
+
+  .menu-badge {
+    width: max-content;
+    max-width: 100%;
+    font-weight: 800;
+  }
+
+  .menu-body h3 {
+    color: #551715;
+    font-size: 0.94rem;
+    min-height: 2.45em;
+  }
+
+  .menu-body p {
+    color: #724f3b;
+    min-height: 4.3em;
+  }
+
+  .menu-bottom strong {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .qty-control {
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: inset 0 0 0 1px rgba(198, 40, 40, 0.06);
+  }
+
+  .qty-btn,
+  .cart-item-actions button {
+    background: linear-gradient(135deg, #ffd54f, #ffecad);
+  }
+
+  .cart-card,
+  .checkout-card,
+  .admin-redirect {
+    background: linear-gradient(180deg, rgba(255, 250, 241, 0.98) 0%, rgba(255, 243, 220, 0.98) 100%);
+  }
+
+  .payment-choice {
+    background: #fffdf7;
+    color: #8e1b1b;
+  }
+
+  .mobile-quickbar {
+    background: rgba(255, 248, 234, 0.96);
+    border: 1px solid rgba(198, 40, 40, 0.12);
+    box-shadow: 0 16px 30px rgba(143, 20, 20, 0.12);
+  }
+
+  .quickbar-link {
+    background: rgba(255, 255, 255, 0.84);
+    color: #8c1b1b;
+  }
+
+  .quickbar-primary {
+    box-shadow: 0 10px 18px rgba(198, 40, 40, 0.24);
+  }
+}
