@@ -180,14 +180,14 @@ const renderPaymentSelection = () => {
 
   if (paymentHint) {
     paymentHint.textContent = paymentMode === "qris"
-      ? "Customer scan QRIS langsung dari meja."
-      : "Tim kami akan datang ke meja, lalu customer bisa pilih cash atau debit.";
+      ? "Bayar langsung dari meja tempat Anda duduk dengan scan QRIS."
+      : "Silakan menuju kasir, lalu pilih pembayaran cash atau debit.";
   }
 
   if (openPaymentButton) {
     openPaymentButton.textContent = paymentMode === "qris"
-      ? "Lanjut Bayar via QRIS"
-      : `Lanjut Bayar di Meja (${getPaymentMethodLabel()})`;
+      ? "Lanjut Bayar di Meja"
+      : `Lanjut Bayar di Kasir (${getPaymentMethodLabel()})`;
   }
 };
 
@@ -196,11 +196,11 @@ const renderPaymentModal = () => {
 
   if (paymentMode === "qris") {
     if (paymentEyebrow) {
-      paymentEyebrow.textContent = "Simulasi QRIS";
+      paymentEyebrow.textContent = "Pembayaran di Meja";
     }
 
     if (paymentTitle) {
-      paymentTitle.textContent = "Scan QR untuk bayar";
+      paymentTitle.textContent = "Scan QRIS dari meja Anda";
     }
 
     if (paymentQr) {
@@ -212,7 +212,7 @@ const renderPaymentModal = () => {
     }
 
     if (paymentCopy) {
-      paymentCopy.textContent = "Setelah pembayaran berhasil, pesanan akan masuk ke dashboard admin terpisah.";
+      paymentCopy.textContent = "Setelah pembayaran dari meja berhasil, pesanan akan masuk ke dashboard admin terpisah.";
     }
 
     if (confirmPaymentButton) {
@@ -223,11 +223,11 @@ const renderPaymentModal = () => {
   }
 
   if (paymentEyebrow) {
-    paymentEyebrow.textContent = "Bayar di Meja";
+    paymentEyebrow.textContent = "Bayar di Kasir";
   }
 
   if (paymentTitle) {
-    paymentTitle.textContent = `Selesaikan pembayaran ${methodLabel} di meja`;
+    paymentTitle.textContent = `Selesaikan pembayaran ${methodLabel} di kasir`;
   }
 
   if (paymentQr) {
@@ -243,11 +243,11 @@ const renderPaymentModal = () => {
   }
 
   if (paymentCopy) {
-    paymentCopy.textContent = "Setelah pembayaran di meja selesai, pesanan akan langsung masuk ke dashboard admin terpisah.";
+    paymentCopy.textContent = "Setelah pembayaran di kasir selesai, pesanan akan langsung masuk ke dashboard admin terpisah.";
   }
 
   if (confirmPaymentButton) {
-    confirmPaymentButton.textContent = `Simulasikan ${methodLabel} di Meja Berhasil`;
+    confirmPaymentButton.textContent = `Simulasikan ${methodLabel} di Kasir Berhasil`;
   }
 };
 
@@ -378,7 +378,7 @@ if (confirmPaymentButton) {
       customerName,
       items: items.map((item) => ({ ...item })),
       totalPrice,
-      paymentChannel: "di meja",
+      paymentChannel: paymentMode === "qris" ? "di meja" : "di kasir",
       paymentMethod,
       status: "processing",
       statusLabel: "diproses",
@@ -401,13 +401,13 @@ if (confirmPaymentButton) {
     if (statusTitle) {
       statusTitle.textContent = paymentMode === "qris"
         ? "Pembayaran QRIS berhasil, pesanan sedang diproses"
-        : `Pembayaran ${paymentMethod} di meja berhasil, pesanan sedang diproses`;
+        : `Pembayaran ${paymentMethod} di kasir berhasil, pesanan sedang diproses`;
     }
 
     if (statusCopy) {
       statusCopy.textContent = paymentMode === "qris"
         ? "Order berhasil masuk ke sistem setelah pembayaran QRIS dari meja. Silakan tunggu pesanan disiapkan oleh tim kami."
-        : `Order berhasil masuk ke sistem setelah pembayaran ${paymentMethod.toLowerCase()} di meja. Silakan tunggu pesanan disiapkan oleh tim kami.`;
+        : `Order berhasil masuk ke sistem setelah pembayaran ${paymentMethod.toLowerCase()} di kasir. Silakan tunggu pesanan disiapkan oleh tim kami.`;
     }
 
     if (orderStatus) {
@@ -420,6 +420,10 @@ syncTableInfo();
 renderPaymentSelection();
 renderMenuFilter();
 renderCart();
+
+
+
+
 
 
 

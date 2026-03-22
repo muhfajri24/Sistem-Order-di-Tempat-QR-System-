@@ -255,21 +255,21 @@
             <div class="payment-choice-box">
               <p class="form-title">Pilih alur pembayaran</p>
               <div class="payment-switch">
-                <button class="payment-choice active" type="button" data-payment-mode="qris">Bayar via QRIS</button>
-                <button class="payment-choice" type="button" data-payment-mode="table">Bayar di Meja</button>
+                <button class="payment-choice active" type="button" data-payment-mode="qris">Bayar di Meja (QRIS)</button>
+                <button class="payment-choice" type="button" data-payment-mode="table">Bayar di Kasir</button>
               </div>
-              <p class="payment-hint" data-payment-hint>Customer scan QRIS langsung dari meja.</p>
+              <p class="payment-hint" data-payment-hint>Bayar langsung dari meja tempat Anda duduk dengan scan QRIS.</p>
             </div>
 
             <div class="cashier-method-box" data-cashier-methods aria-hidden="true">
-              <p class="form-title">Metode bayar di meja</p>
+              <p class="form-title">Metode bayar di kasir</p>
               <div class="payment-switch compact-switch">
                 <button class="payment-choice active" type="button" data-cashier-method="cash">Cash</button>
                 <button class="payment-choice" type="button" data-cashier-method="debit">Debit</button>
               </div>
             </div>
 
-            <button class="btn btn-primary full-btn" type="button" data-open-payment>Lanjut Bayar via QRIS</button>
+            <button class="btn btn-primary full-btn" type="button" data-open-payment>Lanjut Bayar di Meja (QRIS)</button>
           </form>
 
           <div class="status-box" data-order-status hidden>
@@ -293,15 +293,15 @@
     <div class="payment-backdrop" data-close-payment></div>
     <div class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title">
       <button class="modal-close" type="button" aria-label="Tutup pembayaran" data-close-payment>&times;</button>
-      <p class="eyebrow" data-payment-eyebrow>Simulasi QRIS</p>
-      <h2 id="payment-title" data-payment-title>Scan QR untuk bayar</h2>
+      <p class="eyebrow" data-payment-eyebrow>Pembayaran di Meja</p>
+      <h2 id="payment-title" data-payment-title>Scan QRIS dari meja Anda</h2>
       <div class="payment-qr" data-payment-qr>QRIS</div>
       <div class="cashier-info" data-cashier-info hidden>
         <div class="cashier-badges">
-          <span>Bayar di meja</span>
+          <span>Bayar di kasir</span>
           <span data-cashier-label>Cash</span>
         </div>
-        <p class="payment-copy">Tim kami akan datang ke meja untuk membantu menyelesaikan pembayaran sesuai metode yang dipilih.</p>
+        <p class="payment-copy">Silakan menuju kasir untuk menyelesaikan pembayaran sesuai metode yang dipilih.</p>
       </div>
       <p class="payment-total">Total pembayaran: <strong data-payment-total>Rp0</strong></p>
       <p class="payment-copy" data-payment-copy>Setelah pembayaran berhasil, pesanan akan masuk ke dashboard admin terpisah.</p>
@@ -314,4 +314,6 @@
 </html>
 
   
+
+
 

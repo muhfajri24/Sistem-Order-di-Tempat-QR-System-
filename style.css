@@ -1701,3 +1701,43 @@ body::before {
     box-shadow: 0 10px 18px rgba(198, 40, 40, 0.24);
   }
 }
+
+@media (max-width: 640px) {
+  .app-header {
+    padding: 10px 12px;
+    min-height: auto;
+  }
+
+  .brand-block,
+  .admin-link {
+    display: none;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: block;
+  }
+
+  .header-actions > * {
+    width: 100%;
+  }
+
+  .table-pill {
+    width: 100%;
+    min-height: 58px;
+    padding: 12px 14px;
+    border-radius: 18px;
+    text-align: left;
+  }
+
+  .table-pill span {
+    margin-bottom: 4px;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+  }
+
+  .table-pill strong {
+    font-size: 1.05rem;
+    line-height: 1.05;
+  }
+}
