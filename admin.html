@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin | Order di Tempat</title>
+  <meta name="description" content="Dashboard admin sederhana untuk memantau pesanan order di tempat berbasis QR cafe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell admin-page-shell">
+    <header class="app-header">
+      <div class="brand-block">
+        <span class="brand-mark">KS</span>
+        <div>
+          <strong>Kopi Sudut Senja</strong>
+          <p>Dashboard admin order di tempat</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="admin-link" href="index.html?table=Meja%2001">Lihat Halaman Customer</a>
+        <div class="table-pill admin-pill">
+          <span>Order Baru</span>
+          <strong data-admin-unread>0</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-dashboard-grid">
+      <section class="card-surface">
+        <div class="section-head admin-headline">
+          <div>
+            <p class="eyebrow">Admin View</p>
+            <h1>Semua pesanan masuk dipantau dari satu dashboard.</h1>
+            <p class="admin-subtitle">
+              Halaman ini dipisahkan dari customer agar staf fokus menerima order, update status,
+              dan melihat meja mana yang sedang menunggu pesanan.
+            </p>
+          </div>
+          <div class="admin-toolbar">
+            <button class="btn btn-secondary" type="button" data-mark-read>Tandai notifikasi sudah dibaca</button>
+            <button class="btn btn-ghost" type="button" data-reset-orders>Reset demo order</button>
+          </div>
+        </div>
+
+        <div class="admin-summary-grid">
+          <article class="admin-summary-card">
+            <span class="summary-label">Total order</span>
+            <strong data-summary-total>0</strong>
+            <p>Semua transaksi yang sudah dibayar customer.</p>
+          </article>
+          <article class="admin-summary-card">
+            <span class="summary-label">Sedang diproses</span>
+            <strong data-summary-processing>0</strong>
+            <p>Pesanan yang masih perlu disiapkan oleh tim dapur/bar.</p>
+          </article>
+          <article class="admin-summary-card">
+            <span class="summary-label">Selesai</span>
+            <strong data-summary-done>0</strong>
+            <p>Order yang sudah selesai dan siap ditutup.</p>
+          </article>
+          <article class="admin-summary-card">
+            <span class="summary-label">Notifikasi baru</span>
+            <strong data-summary-unread>0</strong>
+            <p>Jumlah order baru yang belum ditandai sudah dibaca admin.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card-surface admin-list-card">
+        <div class="admin-head">
+          <div>
+            <p class="eyebrow">Pesanan Masuk</p>
+            <h2>Daftar order realtime demo</h2>
+          </div>
+          <span class="admin-notification" data-admin-unread-pill>0 baru</span>
+        </div>
+        <div class="admin-orders" data-admin-orders>
+          <p class="empty-state">Belum ada pesanan masuk. Coba buat order dari halaman customer dulu.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
