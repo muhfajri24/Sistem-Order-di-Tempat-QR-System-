@@ -1,49 +1,71 @@
-# Order di Tempat
+# 🍽️ Order di Tempat (QR Cafe Ordering App)
 
-Web app order di tempat berbasis QR untuk cafe, fokus pada UX cepat, mobile-first, dan sekarang dipisah antara halaman customer dan halaman admin.
+Web app sederhana untuk pemesanan makanan/minuman di tempat menggunakan QR code.  
+Dirancang **mobile-first**, cepat, dan tanpa login untuk customer.
 
-## Fitur Utama
+---
 
-- customer masuk langsung ke menu tanpa login
-- quantity increment/decrement per menu
-- cart real-time dengan total harga otomatis
-- checkout ringan: nama opsional + nomor meja dari URL QR
-- QRIS simulasi
-- status pesanan: pesanan sedang diproses
-- dashboard admin terpisah dengan notifikasi dan update status
-- sinkronisasi data demo memakai `localStorage`
+## 🚀 Demo Singkat
 
-## Flow Halaman
+Aplikasi ini punya 2 sisi:
 
-- `index.html` untuk customer
-- `admin.html` untuk admin
+- 👤 **Customer** → pilih menu & order
+- 🛠️ **Admin** → melihat & mengelola pesanan
 
-Customer fokus ke:
-- pilih menu
-- review keranjang
-- bayar QRIS simulasi
-- lihat status pesanan
+Semua data disimpan sementara menggunakan `localStorage` (tanpa backend).
 
-Admin fokus ke:
-- melihat semua order masuk
-- melihat meja dan detail item
-- update status `pending / diproses / selesai`
-- reset data demo jika perlu
+---
 
-## Cara Simulasi
+## ✨ Fitur Utama
 
-- buka halaman customer biasa: meja default `Meja 01`
-- untuk simulasi QR meja, gunakan query param seperti:
-  - `index.html?table=Meja%2003`
-  - `index.html?table=VIP%2001`
-- setelah customer menyelesaikan pembayaran simulasi, buka `admin.html`
-- order akan muncul di dashboard admin dari data `localStorage` browser yang sama
+- Masuk langsung tanpa login (customer)
+- Pilih menu + atur jumlah item
+- Keranjang (cart) real-time
+- Checkout cepat (nama opsional + nomor meja dari QR)
+- Simulasi pembayaran QRIS
+- Status pesanan (pending → diproses → selesai)
+- Dashboard admin terpisah
+- Notifikasi order masuk
+- Reset data demo
 
-## File
+---
 
-- `index.html` untuk halaman customer order
-- `admin.html` untuk dashboard admin terpisah
-- `style.css` untuk tampilan mobile-first bersama
-- `script.js` untuk cart, pembayaran, dan penyimpanan order customer
-- `admin.js` untuk membaca order, notifikasi, dan update status admin
-- `images/` untuk aset gambar lokal
+## 🧭 Alur Penggunaan
+
+### 👤 Customer Flow
+
+1. Buka halaman `index.html`
+2. Pilih menu
+3. Atur jumlah pesanan
+4. Klik checkout
+5. Isi nama (opsional)
+6. Lakukan pembayaran (simulasi)
+7. Lihat status pesanan
+
+---
+
+### 🛠️ Admin Flow
+
+1. Buka halaman `admin.html`
+2. Lihat daftar order
+3. Cek detail pesanan & meja
+4. Update status:
+   - `pending`
+   - `diproses`
+   - `selesai`
+5. Reset data jika diperlukan
+
+---
+
+## 🧪 Cara Menjalankan
+
+### ✅ Cara cepat:
+
+1. Clone repo ini:
+   ```bash
+   git clone https://github.com/username/repo-name.git
+2. Masuk ke folder:
+    cd repo-name
+
+3. Buka file:
+    index.html
