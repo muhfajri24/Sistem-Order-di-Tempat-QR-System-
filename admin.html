@@ -68,6 +68,76 @@
             <p>Jumlah order baru yang belum ditandai sudah dibaca admin.</p>
           </article>
         </div>
+
+        <section class="admin-analytics-panel">
+          <div class="admin-analytics-head">
+            <div>
+              <p class="eyebrow">Analitik Penjualan</p>
+              <h2>Analisis <span data-analytics-range-label>hari ini</span></h2>
+              <p class="admin-subtitle">Lihat menu paling diminati, menu yang bergerak lambat, dan peluang promo agar penjualan lebih seimbang.</p>
+            </div>
+            <div class="analytics-range-switch" aria-label="Pilih periode analitik">
+              <button class="analytics-range-btn active" type="button" data-analytics-range="day">Harian</button>
+              <button class="analytics-range-btn" type="button" data-analytics-range="week">Mingguan</button>
+              <button class="analytics-range-btn" type="button" data-analytics-range="month">Bulanan</button>
+            </div>
+          </div>
+
+          <div class="analytics-overview-grid">
+            <article class="analytics-overview-card">
+              <span class="summary-label">Order periode</span>
+              <strong data-analytics-orders>0</strong>
+              <p>Total transaksi pada periode terpilih.</p>
+            </article>
+            <article class="analytics-overview-card">
+              <span class="summary-label">Omzet periode</span>
+              <strong data-analytics-revenue>Rp0</strong>
+              <p>Total nilai penjualan yang sudah masuk.</p>
+            </article>
+            <article class="analytics-overview-card">
+              <span class="summary-label">Menu favorit</span>
+              <strong data-analytics-favorite>-</strong>
+              <p data-analytics-favorite-copy>Belum ada data menu favorit.</p>
+            </article>
+            <article class="analytics-overview-card">
+              <span class="summary-label">Perlu didorong</span>
+              <strong data-analytics-low>-</strong>
+              <p data-analytics-low-copy>Belum ada data menu yang perlu didorong.</p>
+            </article>
+          </div>
+
+          <div class="analytics-grid">
+            <section class="analytics-card">
+              <div class="analytics-card-head">
+                <p class="eyebrow">Menu Diminati</p>
+                <span class="analytics-caption">Top seller periode ini</span>
+              </div>
+              <div class="analytics-list" data-analytics-top-list>
+                <p class="empty-state analytics-empty">Belum ada data order untuk periode ini.</p>
+              </div>
+            </section>
+
+            <section class="analytics-card">
+              <div class="analytics-card-head">
+                <p class="eyebrow">Menu Kurang Diminati</p>
+                <span class="analytics-caption">Butuh dorongan promo</span>
+              </div>
+              <div class="analytics-list" data-analytics-low-list>
+                <p class="empty-state analytics-empty">Belum ada data order untuk periode ini.</p>
+              </div>
+            </section>
+
+            <section class="analytics-card analytics-card-wide">
+              <div class="analytics-card-head">
+                <p class="eyebrow">Insight Promosi</p>
+                <span class="analytics-caption">Rekomendasi praktis untuk menyeimbangkan penjualan</span>
+              </div>
+              <div class="analytics-insight-list" data-analytics-insights>
+                <p class="empty-state analytics-empty">Insight promo akan muncul setelah ada transaksi.</p>
+              </div>
+            </section>
+          </div>
+        </section>
       </section>
 
       <section class="card-surface admin-list-card">
